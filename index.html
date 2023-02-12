@@ -5,19 +5,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Converter</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h3>Converter from BYN to another currency</h3>
-    <input class="value-input" type="number" />
-    <select class="select-currency">
-      <option value="USD">USD($)</option>
-      <option value="EUR">EUR(€)</option>
-      <option value="GBP">GBP(£)</option>
-      <option value="BYN">BYN(Br)</option>
-      <option value="UAH">UAH(₴)</option>
-    </select>
-    <button class="buttonRes">Result</button>
-    <p class="outputP"></p>
+    <h3 class="main-text">Converter from BYN to another currency</h3>
+    <div>
+      <input class="value-input" type="number" placeholder="0" />
+      <select class="select-currency">
+        <option value="USD">USD($)</option>
+        <option value="EUR">EUR(€)</option>
+        <option value="GBP">GBP(£)</option>
+        <option value="BYN">BYN(Br)</option>
+        <option value="UAH">UAH(₴)</option>
+      </select>
+      <!-- <button class="button-result">Result</button> -->
+      <button class="button-reset">Reset</button>
+    </div>
+    <p class="outputBlock"></p>
   </body>
   <script src="index.js"></script>
   <script src="convertor.js"></script>

@@ -1,16 +1,18 @@
 const valueInput = document.querySelector('.value-input');
 const selectCurrency = document.querySelector('.select-currency');
-const outputP = document.querySelector('.outputP');
-const buttonRes = document.querySelector('.buttonRes'); // тоже нужно закоментировать, если выводить результат без кнопки
+const outputBlock = document.querySelector('.outputBlock');
+// const buttonResult = document.querySelector('.button-result'); // тоже нужно закоментировать, если выводить результат без кнопки
+const btnReset = document.querySelector('.button-reset');
+outputBlock.innerHTML = 0;
 
 // вывод конвертированных данных на экран при нажатии кнопки
 
-buttonRes.addEventListener('click', function () {
-  const belRub = Number(valueInput.value);
-  const corrency = selectCurrency.value;
-  const result = convert(belRub, corrency);
-  outputP.innerHTML = result.toFixed(2);
-});
+// buttonResult.addEventListener('click', function () {
+//   const belRub = Number(valueInput.value);
+//   const corrency = selectCurrency.value;
+//   const result = convert(belRub, corrency);
+//   outputBlock.innerHTML = result.toFixed(2);
+// });
 
 // автоматический перерасчет при изменении валюты через селектор
 
@@ -19,15 +21,20 @@ selectCurrency.addEventListener('change', function () {
   const currency = selectCurrency.value;
   const result = convert(belRub, currency);
 
-  outputP.innerText = result.toFixed(2);
+  outputBlock.innerText = result.toFixed(2);
+});
+
+btnReset.addEventListener('click', () => {
+  valueInput.value = null;
+  outputBlock.innerHTML = 0;
 });
 
 // моментальное конвертирование без кнопки//
 
-// valueInput.addEventListener('input', function () {
-//   const belRub = Number(valueInput.value);
-//   const currency = selectCurrency.value;
-//   const result = convert(belRub, currency);
+valueInput.addEventListener('input', function () {
+  const belRub = Number(valueInput.value);
+  const currency = selectCurrency.value;
+  const result = convert(belRub, currency);
 
-//   outputP.innerText = result.toFixed(2);;
-// });
+  outputBlock.innerText = result.toFixed(2);
+});
